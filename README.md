@@ -107,6 +107,16 @@ Don't want to self-host? The [AI Clipping API](https://muapi.ai/playground/ai-cl
 
 ## Usage
 
+### 🌐 Web GUI (Browser Interface)
+
+Launch the interactive web UI:
+```bash
+python app.py
+```
+Open **`http://localhost:7860`** in your browser to paste YouTube URLs, upload video files, tweak start/end timestamps, select framing styles (`crop-face`, `fit-center`, `fit-blur`), and preview/download generated shorts directly.
+
+---
+
 ### Single video (API mode — default)
 
 ```bash

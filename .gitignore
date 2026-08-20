@@ -1,8 +1,30 @@
-.env
-__pycache__/
-*.pyc
-.venv/
+# Virtual environment
 venv/
+.venv/
+env/
+
+# Environment variables & API keys
+.env
+.env.*
+!.env.example
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Video outputs & temporary cut files
 output/
 *.mp4
+*.mp3
+*.wav
+*.srt
+*.silent.mp4
+*.cut.mp4
+
+# IDE / Editor configs
+.vscode/
+.idea/
 .DS_Store

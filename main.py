@@ -31,6 +31,16 @@ def main() -> int:
     parser.add_argument("--aspect-ratio", default="9:16", help="Output aspect ratio (default: 9:16)")
     parser.add_argument("--format", default="720", help="Source download resolution: 360 / 480 / 720 / 1080 (default: 720)")
     parser.add_argument("--language", default=None, help="Force Whisper language code, e.g. 'en' (default: auto-detect)")
+    parser.add_argument("--start-time", type=float, default=None, help="Start time in seconds for custom clip or search range (e.g. 194)")
+    parser.add_argument("--end-time", type=float, default=None, help="End time in seconds for custom clip or search range (e.g. 240)")
+    parser.add_argument(
+        "--video-mode",
+        "--crop-mode",
+        dest="video_mode",
+        default="crop-face",
+        choices=["crop-face", "fit-center", "fit-blur", "crop-center", "face", "fit", "blur", "center"],
+        help="Framing mode: crop-face (default, face tracking), fit-center (fit with black bars), fit-blur (fit with blurred background), crop-center (center crop)",
+    )
     parser.add_argument("--output-json", default=None, help="Write the full result JSON to this path")
     args = parser.parse_args()
 
@@ -42,6 +52,9 @@ def main() -> int:
             download_format=args.format,
             language=args.language,
             mode=args.mode,
+            start_time=args.start_time,
+            end_time=args.end_time,
+            video_mode=args.video_mode,
         )
     except Exception as e:
         print(f"\nFAILED: {e}", file=sys.stderr)

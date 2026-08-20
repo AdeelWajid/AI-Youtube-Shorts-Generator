@@ -180,6 +180,9 @@ xargs -a urls.txt -I{} python main.py "{}"
 | `--aspect-ratio` | `9:16` | Any ratio; `9:16` for TikTok/Reels, `1:1` for square |
 | `--format` | `720` | Source download resolution: `360` / `480` / `720` / `1080` |
 | `--language` | auto | Force Whisper language code (e.g. `en`) |
+| `--start-time` | — | Start time in seconds for custom clip or search range (e.g. `194`) |
+| `--end-time` | — | End time in seconds for custom clip or search range (e.g. `240`) |
+| `--video-mode` | `crop-face` | Framing mode: `crop-face` (face tracking), `fit-center` (black bars), `fit-blur` (blurred background), `crop-center` (center crop) |
 | `--output-json` | — | Dump the full result (transcript + all candidates) to a file |
 
 ### API mode vs Local mode
